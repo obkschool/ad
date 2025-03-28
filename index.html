@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convex Chat Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load the Convex loader script early -->
+    <script src="convex-loader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-screen" class="screen active">
+            <h1>Welcome to Chat Game</h1>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <div class="avatar-selector">
+                    <p>Select your avatar:</p>
+                    <div class="avatar-options">
+                        <button class="avatar-btn" data-emoji="😀">😀</button>
+                        <button class="avatar-btn" data-emoji="🤠">🤠</button>
+                        <button class="avatar-btn" data-emoji="👻">👻</button>
+                        <button class="avatar-btn" data-emoji="🤖">🤖</button>
+                        <button class="avatar-btn" data-emoji="👽">👽</button>
+                        <button class="avatar-btn" data-emoji="🐱">🐱</button>
+                        <button class="avatar-btn" data-emoji="🦊">🦊</button>
+                        <button class="avatar-btn" data-emoji="🐶">🐶</button>
+                    </div>
+                </div>
+                <button id="create-room-btn" class="btn">Create New Room</button>
+                <div class="divider">OR</div>
+                <div class="form-group">
+                    <input type="text" id="room-id" placeholder="Enter Room ID">
+                    <button id="join-room-btn" class="btn">Join Room</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="waiting-room" class="screen">
+            <h2>Waiting Room</h2>
+            <div class="room-info">
+                <p>Room ID: <span id="waiting-room-id"></span></p>
+                <p>Share this ID with friends to let them join!</p>
+            </div>
+            <div class="players-list">
+                <h3>Players in Room:</h3>
+                <ul id="waiting-players"></ul>
+            </div>
+            <div class="chat-box">
+                <div id="waiting-messages" class="messages"></div>
+                <div class="message-input">
+                    <input type="text" id="waiting-message-input" placeholder="Type a message...">
+                    <button id="waiting-send-btn" class="btn">Send</button>
+                </div>
+            </div>
+            <button id="start-game-btn" class="btn">Start Game</button>
+            <button id="leave-waiting-btn" class="btn btn-secondary">Leave Room</button>
+        </div>
+
+        <div id="game-room" class="screen">
+            <div class="game-header">
+                <h2>Chat Game</h2>
+                <p>Room ID: <span id="game-room-id"></span></p>
+            </div>
+            <div class="game-container">
+                <div class="game-board" id="game-board">
+                    <!-- Game content will go here -->
+                    <div class="game-message">
+                        <h3>Chat and play together!</h3>
+                        <p>Use the chat to communicate with other players.</p>
+                    </div>
+                </div>
+                <div class="game-sidebar">
+                    <div class="players-online">
+                        <h3>Players Online</h3>
+                        <ul id="online-players"></ul>
+                    </div>
+                    <div class="chat-box">
+                        <div id="game-messages" class="messages"></div>
+                        <div class="message-input">
+                            <input type="text" id="game-message-input" placeholder="Type a message...">
+                            <button id="game-send-btn" class="btn">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="leave-game-btn" class="btn btn-secondary">Leave Game</button>
+        </div>
+    </div>
+
+    <!-- First load Convex, then our application scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/convex@1.10.0/dist/browser.bundle.js"></script>
+    <script>
+        // Verify Convex is loaded
+        if (typeof convex === 'undefined') {
+            console.error('Convex is not available after loading the script directly.');
+            alert('Failed to load the Convex library. Please check your internet connection and try again.');
+        } else {
+            console.log('Convex is available for use!');
+        }
+    </script>
+    <script src="convex-client.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 

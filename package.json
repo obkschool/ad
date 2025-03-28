@@ -1,0 +1,15 @@
+{
+  "name": "convex-chat-game",
+  "version": "1.0.0",
+  "description": "An online chat game with waiting rooms using Convex",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server -c-1"
+  },
+  "dependencies": {
+    "convex": "^1.10.0"
+  },
+  "keywords": ["convex", "chat", "game", "multiplayer"],
+  "author": "",
+  "license": "MIT"
+} 

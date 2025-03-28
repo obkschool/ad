@@ -1,0 +1,6 @@
+convex key
+dev:adorable-spider-894|eyJ2MiI6ImU4MTRmYTlhODUxOTQzNjM4YWFiMGFjODkwZDc5YmY2In0= 
+dev link 
+@https://adorable-spider-894.convex.cloud  
+HTTP Actions URL
+@https://adorable-spider-894.convex.site 
